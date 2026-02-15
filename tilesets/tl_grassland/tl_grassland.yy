@@ -3,6 +3,7 @@
   "%Name":"tl_grassland",
   "autoTileSets":[
     {"$GMAutoTileSet":"","%Name":"Gramado/Terra","closed_edge":false,"name":"Gramado/Terra","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[219,289,286,287,199,229,0,188,196,0,226,190,198,248,250,258,],},
+    {"$GMAutoTileSet":"","%Name":"Gramado/Agua","closed_edge":false,"name":"Gramado/Agua","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[219,470,466,373,380,402,0,372,376,0,405,375,463,462,465,408,],},
   ],
   "macroPageTiles":{
     "SerialiseHeight":0,
