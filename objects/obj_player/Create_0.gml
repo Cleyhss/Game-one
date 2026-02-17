@@ -6,6 +6,9 @@ estado_idle = new estado();
 //Iniciando o estado de "walk"
 estado_walk = new estado();
 
+//Iniciando o estado de "attack"
+estado_attack = new estado();
+
 #region estado_idle
 //O primeiro estado idle precisa de um "inicia" que vai ser setado no Script "state_machine"
 estado_idle.inicia = function() {
@@ -22,6 +25,10 @@ estado_idle.roda = function() {
 	
 	if (up xor down or left xor right) {
 		troca_estado(estado_walk);
+	}
+	
+	if(attack) {
+		troca_estado(estado_attack);
 	}
 }
 
@@ -58,6 +65,30 @@ estado_walk.roda = function() {
 	if (velv == 0 && velh == 0){
 		troca_estado(estado_idle);
 	}
+	
+	if(attack) {
+		troca_estado(estado_attack);
+	}
+}
+
+#endregion
+
+#region estado_attack
+estado_attack.inicia = function() {
+	//Definindo a sprite
+	sprite_index = define_sprite(dir, spr_player_attack_side, spr_player_attack_front, spr_player_attack_back);
+	image_index = 0;
+	velh = 0;
+	velv = 0;
+}
+
+estado_attack.roda = function() {
+	
+	//Saindo do ataque quando ele acabar
+	if (image_index >= image_number - 0.2) {
+		//indo para o estado de "idle" ou "parado"
+		troca_estado(estado_idle);
+	}
 }
 
 #endregion
@@ -68,6 +99,7 @@ up = noone;
 down = noone;
 left = noone;
 right = noone;
+attack = noone;
 
 //variaveis de movimento
 velh = 0;	//velocidade horizontal
@@ -82,11 +114,12 @@ dir = 0;
 #endregion
 
 #region Iniciando_funcoes
-controles = function() {
-	up    = keyboard_check(vk_up) or keyboard_check(ord("W"));
-	down  = keyboard_check(vk_down) or keyboard_check(ord("S"));
-	left  = keyboard_check(vk_left) or keyboard_check(ord("A"));
-	right = keyboard_check(vk_right) or keyboard_check(ord("D"));
+controles  = function() {
+	up     = keyboard_check(vk_up) or keyboard_check(ord("W"));
+	down   = keyboard_check(vk_down) or keyboard_check(ord("S"));
+	left   = keyboard_check(vk_left) or keyboard_check(ord("A"));
+	right  = keyboard_check(vk_right) or keyboard_check(ord("D"));
+	attack = keyboard_check_pressed(vk_space) or mouse_check_button_pressed(mb_left);
 	
 	//Confirmando colisão
 	//move_and_collide(velh, 0, obj_colisor, 12)
