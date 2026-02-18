@@ -106,7 +106,7 @@ velh = 0;	//velocidade horizontal
 velv = 0;	//velocidade vertical
 
 //velocidade jogador
-vel = 1;
+vel = 1.4;
 
 //controlando as direções do personagem
 dir = 0;

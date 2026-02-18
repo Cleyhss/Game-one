@@ -53,6 +53,6 @@ function define_sprite(_dir = 0, sprite_side, sprite_front, sprite_back){
 		case 6: _sprite = sprite_front; break;
 		case 7: _sprite = sprite_side; break;
 	}
-	show_debug_message(_dir);
+	//show_debug_message(_dir);
 	return _sprite;
 }
