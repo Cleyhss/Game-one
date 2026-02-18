@@ -1,0 +1,64 @@
+//Criando a surface
+surf	= noone;
+momento = 0;
+
+//Efeito de escurecer
+dia_noite = function() {
+	//Alterando o momento
+	var ciclo = 600;
+	var tempo = (get_timer() / 1000000) mod ciclo;
+	var t = tempo / ciclo;
+
+	if (t < 0.8) {
+	    // dia (transição suave)
+	    momento = t / 0.8;
+	} else {
+	    // noite mais curta
+	    momento = 1 - ((t - 0.8) / 0.2);
+	}
+	//momento = (sin(get_timer() / 1000000) + 1) / 2;  //Para teste rapido
+	//checar se a surface existe
+	if(surface_exists(surf)) {
+		//Desenhando na surface
+		surface_set_target(surf);
+		
+		//garantindo que a surface está limpa
+		draw_clear_alpha(c_black, 0);
+		
+		draw_set_colour(c_black);
+		draw_set_alpha(min(momento, 0.85));
+		draw_rectangle(0, 0 , room_width, room_height, false);
+		draw_set_alpha(1);
+		draw_set_colour(-1);
+		
+		//Desenhando um buraco onde for iluminado
+		if (instance_exists(obj_poste_dir)) {
+			with(obj_poste_dir) {
+				gpu_set_blendmode(bm_subtract);
+				
+				var _tamanho = 40 + variacao;
+				
+				draw_set_alpha(.5);
+				draw_circle(x, y - 20, _tamanho, false);
+				
+				draw_set_alpha(.3);
+				draw_circle(x, y - 20, _tamanho + 5, false);
+				
+				draw_set_alpha(.2);
+				draw_circle(x, y - 20, _tamanho + 10, false);
+				
+				draw_set_alpha(1);
+				
+				gpu_set_blendmode(bm_normal);
+			}
+		}
+		
+		//Parando de desenhar
+		surface_reset_target();		//se a surface existe, eu desenho ela
+		draw_surface(surf, 0, 0);
+	}
+	else{
+		//Se não existir, crio
+		surf = surface_create(room_width, room_height);
+	}
+}

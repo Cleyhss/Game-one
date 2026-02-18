@@ -40,7 +40,6 @@
     {"id":{"name":"obj_decoracao_pai","path":"objects/obj_decoracao_pai/obj_decoracao_pai.yy",},},
     {"id":{"name":"obj_fogueira","path":"objects/obj_fogueira/obj_fogueira.yy",},},
     {"id":{"name":"obj_luz","path":"objects/obj_luz/obj_luz.yy",},},
-    {"id":{"name":"obj_luz2","path":"objects/obj_luz2/obj_luz2.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_poste_dir","path":"objects/obj_poste_dir/obj_poste_dir.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},

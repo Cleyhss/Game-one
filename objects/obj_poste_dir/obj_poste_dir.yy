@@ -1,7 +1,11 @@
 {
   "$GMObject":"",
   "%Name":"obj_poste_dir",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_poste_dir",
   "overriddenProperties":[
@@ -36,6 +40,9 @@
     "name":"spr_poste_dir",
     "path":"sprites/spr_poste_dir/spr_poste_dir.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_poste_dir",
+    "path":"sprites/spr_poste_dir/spr_poste_dir.yy",
+  },
   "visible":true,
 }
