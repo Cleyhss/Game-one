@@ -27,7 +27,7 @@
   ],
   "name":"spr_poste_baixo_aceso",
   "nineSlice":null,
-  "origin":7,
+  "origin":9,
   "parent":{
     "name":"Luzes",
     "path":"folders/Sprites/Level/Luzes.yy",
@@ -92,7 +92,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":32,
-    "yorigin":64,
+    "yorigin":48,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

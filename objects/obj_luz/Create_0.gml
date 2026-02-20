@@ -32,19 +32,38 @@ dia_noite = function() {
 		draw_set_colour(-1);
 		
 		//Desenhando um buraco onde for iluminado
-		if (instance_exists(obj_poste_dir)) {
+		if (instance_exists(obj_poste_dir)) or (instance_exists(obj_poste_baixo)) {
 			with(obj_poste_dir) {
 				gpu_set_blendmode(bm_subtract);
 				
 				var _tamanho = 40 + variacao;
 				
-				draw_set_alpha(.5);
+				draw_set_alpha(.4);
 				draw_circle(x, y - 20, _tamanho, false);
 				
-				draw_set_alpha(.3);
+				draw_set_alpha(.2);
 				draw_circle(x, y - 20, _tamanho + 5, false);
 				
+				draw_set_alpha(.1);
+				draw_circle(x, y - 20, _tamanho + 10, false);
+				
+				draw_set_alpha(1);
+				
+				gpu_set_blendmode(bm_normal);
+			}
+			
+			with(obj_poste_baixo) {
+				gpu_set_blendmode(bm_subtract);
+				
+				var _tamanho = 40 + variacao;
+				
+				draw_set_alpha(.4);
+				draw_circle(x, y - 20, _tamanho, false);
+				
 				draw_set_alpha(.2);
+				draw_circle(x, y - 20, _tamanho + 5, false);
+				
+				draw_set_alpha(.1);
 				draw_circle(x, y - 20, _tamanho + 10, false);
 				
 				draw_set_alpha(1);
