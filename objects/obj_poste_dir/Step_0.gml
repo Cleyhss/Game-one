@@ -29,3 +29,4 @@ if (timer <= 0) {
 // aproxima suavemente do alvo
 variacao = lerp(variacao, alvo, 0.06);
 
+// Agora vai
